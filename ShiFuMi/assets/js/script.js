@@ -83,14 +83,14 @@ function resultat() {
                     //Déclencheur animation Score
                     $('#gameArena').addClass(`score`)
                     //Annonce du résultat
-                    $('#resultat p').text(`Tu as gagné`)
+                    $('#resultat p').text(`Tu gagnes`)
                     $('#victoireJoueur').text(`${victoireJoueur}`)
                     $('#pageFin p').text(`Youpiiiii ! Tu as gagné ! ${victoireJoueur} à ${victoireOrdi}`)
                     setTimeout(function(){  
                         $('#gameArena').hide()
                         $('#gameAccueil').hide()
                         $('#pageFin').show()
-                                            }, 3000)
+                                            }, 1500)
 
                 } 
                 else {
@@ -100,7 +100,7 @@ function resultat() {
                     //Déclencheur animation Score
                     $('#gameArena').addClass(`score`)
                     //Annonce du résultat
-                    $('#resultat p').text(`Tu as gagné`)
+                    $('#resultat p').text(`Tu gagnes`)
                     $('#victoireJoueur').text(`${victoireJoueur}`)
                 }
     } else if (choixJoueur === choixOrdinateur) {
@@ -120,14 +120,14 @@ function resultat() {
                 $('#playerAnimation').addClass(`loose ${choixJoueur}`)
                 $('#gameArena').addClass(`score`)
                 //Annonce du résultat
-                $('#resultat p').text(`C'est perdu`)
+                $('#resultat p').text(`Kiki gagne`)
                 $('#victoireOrdi').text(`${victoireOrdi}`)
                 $('#pageFin p').text(`Bouuuuh ! Tu as perdu ! ${victoireJoueur} à ${victoireOrdi}`) 
                 setTimeout(function(){  
                     $('#gameArena').hide()
                     $('#gameAccueil').hide()
                     $('#pageFin').show() 
-                                        }, 3000)
+                                        }, 1500)
 
             } 
             else {
@@ -136,7 +136,7 @@ function resultat() {
             $('#playerAnimation').addClass(`loose ${choixJoueur}`)
             $('#gameArena').addClass(`score`)
             //Annonce du résultat
-            $('#resultat p').text(`C'est perdu`)
+            $('#resultat p').text(`Kiki gagne`)
             $('#victoireOrdi').text(`${victoireOrdi}`)
             }
     }   
