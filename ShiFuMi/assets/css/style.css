@@ -39,6 +39,7 @@
     border-radius: 10px;
     margin-top: 20px;
     text-align: center;
+    font-size: 1.5em;
     font-family: FingerPaint-Regular;
 }
 #paraBienvenue{
@@ -54,7 +55,7 @@
     margin-top: 20px;
     background-color: rgba(219, 107, 63, 0.5);
     font-family: PrincessSofia-Regular;
-    font-size: 2em;
+    font-size: 2.5em;
     cursor: pointer;
 }
 @keyframes mon_anim{
