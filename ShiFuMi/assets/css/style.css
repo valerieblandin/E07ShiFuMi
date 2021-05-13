@@ -2,9 +2,6 @@
     margin: 0;
     padding: 0;
 }
-body {
-
-}
 @font-face {
     font-family: 'FingerPaint-Regular';
     src: url(../font/finger-paint/FingerPaint-Regular.ttf);
@@ -27,6 +24,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
 }
 #titleAccueil{
     font-family: PrincessSofia-Regular;
@@ -56,14 +54,14 @@ body {
     margin-top: 20px;
     background-color: rgba(219, 107, 63, 0.5);
     font-family: PrincessSofia-Regular;
-    font-size: 1.5em;
+    font-size: 2em;
     cursor: pointer;
 }
 @keyframes mon_anim{
     0%{
         transform: translateY(20vh);
         opacity: 0;
-    },
+    }
     100%{
         transform: translateY(0px);
         opacity: 1;
@@ -103,7 +101,7 @@ body {
     justify-content: center;
 }
 #scoreOrdi {
-    width: 200px;
+    width: 300px;
     height: 200px;
     margin-bottom: 20px;
     display: flex;
@@ -112,7 +110,7 @@ body {
     justify-content: center;
 }
 #scoreJoueur {
-    width: 200px;
+    width: 300px;
     height: 200px;
     margin-top: 20px;
     display: flex;
@@ -137,9 +135,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-#choixOrdi p {
-    font-size: 5em;
-}
 #choixJoueur {
     width: 200px;
     height: 200px;
@@ -158,7 +153,7 @@ body {
     justify-content: space-around;
     align-items: center;
 }
-.btn{
+#zoneChoix button{
     display: none;
     position: absolute;
     width: 100px;
@@ -175,6 +170,35 @@ body {
     align-items: center;
     justify-content: center;
 }
+/*Mise en forme textes*/
+h2{
+    font-family: FingerPaint-Regular;
+    font-size: 2em;
+    color: rgb(219, 107, 63);
+    text-shadow: 5px 5px 5px  rgb(43, 18, 8);
+}
+#zoneScore p{
+    font-family: PrincessSofia-Regular;
+    font-size: 4em;
+    color: rgb(219, 107, 63);
+    text-shadow: 5px 5px 5px  rgb(43, 18, 8);
+}
+#choixOrdi p {
+    font-family: FingerPaint-Regular;
+    font-size: 2em;
+    color :rgb(66, 29, 14);
+    text-align: center;
+}
+#choixJoueur p {
+    font-family: FingerPaint-Regular;
+    font-size: 2em;
+    color :rgb(66, 29, 14);
+    text-align: center;
+    padding-top: 25%;
+}
+#resultat p{
+    text-align: center;
+}
 /*Timer*/
 #timer {
     position: absolute;
@@ -190,7 +214,9 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    font-size: 30em;
+    font-size: 25em;
+    font-family: FingerPaint-Regular;
+    color : rgba(219, 107, 63, 0.8);
     opacity: 0;
     top: 0;
     right: 0;
@@ -241,6 +267,8 @@ body {
     font-size: 10em;
     animation: resultatAnim 2s 3s forwards;
 }
+
+/* Backgrounds images */
 #choixJoueur.rose {
     background-repeat: no-repeat;
     background-position: center;
@@ -279,6 +307,8 @@ body {
     background-size: contain;
     transform: rotate(180deg);
 }
+
+/* Animations */
 #fightAnimation {
     position: fixed;
     pointer-events: none;
@@ -727,6 +757,39 @@ body {
     animation: mainLoose 2s ;
 }
 
+/* PAGE DE FIN */
+#pageFin {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-color: seagreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+#pageFin p{
+    font-family: FingerPaint-Regular;
+    font-size: 4em;
+    color :rgb(96, 166, 212);
+    text-align: center;
+    text-shadow: 5px 5px 5px  rgb(43, 18, 8);
+}
+#btnRetour{
+    padding: 15px;
+    width: 40vw;
+    border-radius: 50%;
+    margin-top: 20px;
+    background-color: rgba(219, 107, 63, 0.5);
+    font-family: PrincessSofia-Regular;
+    font-size: 2em;
+    cursor: pointer;
+}
 /*******************************************Media Queries***********************************************/
 @media screen and (max-width: 1024px){
     #zoneChoix button {

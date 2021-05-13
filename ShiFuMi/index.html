@@ -15,13 +15,16 @@
         <div id="textPres">
             <h1 id="titleAccueil">Shifumi du jardin</h1>
             <p id="paraBienvenue"> Bienvenue à toi, amoureux du jardin.</p>
-            <p id="paraRegle">Je te propose de voir combien la vie au jardin est intense! <br>Pour cela voici quelques règles qui vont permettre à la rose de s'épanouir librement : 
+            <p id="paraRegle"> <br>Pour que la rose s'épanouisse librement, voici quelques règles : 
             <div>
                 <br> La cétoine fait dépérir la fleur. <br>
                 Tu peux éloigner la cétoine de la rose. <br>
-                Mais attention, la rose peut te piquer!</p>
+                Mais attention, la rose peut te piquer!</p> <br>
+                <p>La partie se joue en 3 manches gagnantes.</p> <br>
+                <p>Amuse-toi bien et... bonne chance!</p>
+
             </div>
-            <button id="btnBegin" type="button">Amuse-toi bien et... bonne chance!</button>
+            <button id="btnBegin" type="button">Jouer !</button>
         </div>
     </div>
      <!-- JEU -->
@@ -30,35 +33,36 @@
         <div id="plateau">
             <div id="zoneScore">
                 <div id="scoreOrdi">
-                    <h2>Ordinateur :</h2>
+                    <h2>Kiki l'ordi :</h2>
                     <p id="victoireOrdi">0</p>
                 </div>
                 <div id="scoreJoueur">
-                    <h2>Joueur :</h2>
+                    <h2>Toi :</h2>
                     <p id="victoireJoueur">0</p>
                 </div>
             </div>
             <div id="zoneJeu">
                 <div id="choixOrdi">
-                    <p>?</p>
+                    <p>Que va choisir Kiki l'ordi?</p>
                 </div>
                 <div id="choixJoueur">
                     <div id="animation"></div>
+                    <p>Dépose ton choix.</p>
                 </div>
             </div>
         </div>
         
         <div id="zoneChoix">
             <div id="rose" class="drag">
-                <button class="btn"></button>
+                <button class="rose"></button>
                 <img class="ui-draggable" src="assets/img/rose.png" alt="rose">
             </div>
             <div id="main" class="drag">
-                <button class="btn"></button>
+                <button class="main"></button>
                 <img class="ui-draggable" src="assets/img/main.png" alt="rose">
             </div>
             <div id="cetoine" class="drag">
-                <button class="btn"></button>
+                <button class="cetoine"></button>
                 <img class="ui-draggable" src="assets/img/cetoine.png" alt="rose">
             </div>
         </div>
@@ -88,8 +92,13 @@
                 </div>            
             </div>
         </div>
-
     </div>
+    <!--page de fin-->
+    <div id="pageFin">
+            <p></p>
+            <button id="btnRetour" type="button">Pour recommencer une partie, clique ici!</button>
+    </div>
+
 
     <!--Script-->
     <script src="assets/js/jquery-3.6.0.min.js"></script>
