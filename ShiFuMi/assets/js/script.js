@@ -1,8 +1,59 @@
+let ambiance = new Audio('https://lasonotheque.org/UPLOAD/aac/1859.aac')
+ambiance.volume = 0.5
+let ouch = new Audio('https://lasonotheque.org/UPLOAD/wav/2361.wav')
+let ouchDeux = new Audio ('https://lasonotheque.org/UPLOAD/wav/0477.wav')
+let bourdon = new Audio('https://lasonotheque.org/UPLOAD/mp3/1000.mp3')
+let carillon = new Audio('https://lasonotheque.org/UPLOAD/mp3/0920.mp3')
+let tiens = new Audio('https://lasonotheque.org/UPLOAD/wav/0105.wav')
+let yeah = new Audio('assets/sons/bruitage-oh-yeah.mp3')
+let win = new Audio ('https://lasonotheque.org/UPLOAD/wav/0237.wav')
+let loose = new Audio('https://lasonotheque.org/UPLOAD/mp3/0233.mp3')
 $('#btnBegin').click(function(){
     $('#gameAccueil').hide()
     $('#pageFin').hide()
+    ambiance.play()
 })
 
+function audio() {
+    if ($('#playerAnimation').hasClass('win rose')){
+        setTimeout(function(){
+            ouch.currentTime = 0
+            ouch.play()
+        }, 1200)
+    }
+    if ($('#ordiAnimation').hasClass('win rose')){
+        setTimeout(function(){
+            ouchDeux.currentTime = 0
+            ouchDeux.play()
+        }, 1200)
+    }
+    if ($('#ordiAnimation').hasClass('eq rose')){
+            carillon.currentTime = 0
+            carillon.play() 
+            setTimeout(function(){
+                carillon.pause()
+            }, 2000)       
+    }
+    if ($('#ordiAnimation').hasClass('eq main')){
+        yeah.currentTime = 0
+        yeah.play()     
+    }
+    if ($('#ordiAnimation').hasClass('win cetoine') || $('#ordiAnimation').hasClass('eq cetoine') ||  $('#playerAnimation').hasClass('win cetoine')) {
+        bourdon.currentTime = 0
+        bourdon.play()
+        setTimeout(function(){
+            bourdon.pause()
+        }, 2000)
+    }
+    if ($('#ordiAnimation').hasClass('win main') ||  $('#playerAnimation').hasClass('win main')){
+        setTimeout(function(){
+            tiens.currentTime = 0
+            tiens.play()
+        }, 300)
+    }
+
+    
+}
 //Déclaration compteurs de score
 let victoireJoueur = 0
 let victoireOrdi = 0
@@ -85,17 +136,21 @@ function resultat() {
                     //Annonce du résultat
                     $('#resultat p').text(`Tu gagnes`)
                     $('#victoireJoueur').text(`${victoireJoueur}`)
-                    $('#pageFin p').text(`Youpiiiii ! Tu as gagné ! ${victoireJoueur} à ${victoireOrdi}`)
+                    $('#pageFin p').html(`Youpiiiii ! <br> Tu as gagné ! <br> ${victoireJoueur} à ${victoireOrdi}`)
+                    audio()
                     setTimeout(function(){  
                         $('#gameArena').hide()
                         $('#gameAccueil').hide()
                         $('#pageFin').show()
+                        win.currentTime = 0
+                        win.play()
                                             }, 1500)
                 } 
                 else {
                     //Ajout de classe egalité pour l'animation
                     $('#ordiAnimation').addClass(`loose ${choixOrdinateur}`)
                     $('#playerAnimation').addClass(`win ${choixJoueur}`)
+                    audio()
                     //Déclencheur animation Score
                     $('#gameArena').addClass(`score`)
                     //Annonce du résultat
@@ -110,6 +165,7 @@ function resultat() {
                 $('#playerAnimation').addClass(`eq ${choixJoueur}`)
                 //Déclencheur animation Score
                 $('#gameArena').addClass(`score`)
+                audio()
     } else {
         victoireOrdi+=1
         $('#victoireOrdi').text(`${victoireOrdi}`)
@@ -121,11 +177,17 @@ function resultat() {
                 //Annonce du résultat
                 $('#resultat p').text(`Kiki gagne`)
                 $('#victoireOrdi').text(`${victoireOrdi}`)
-                $('#pageFin p').text(`Bouuuuh ! Tu as perdu ! ${victoireJoueur} à ${victoireOrdi}`) 
+                $('#pageFin p').html(`Bouuuuh ! <br> Tu as perdu ! <br> ${victoireJoueur} à ${victoireOrdi}`)
+                audio() 
                 setTimeout(function(){  
                     $('#gameArena').hide()
                     $('#gameAccueil').hide()
-                    $('#pageFin').show() 
+                    $('#pageFin').show()
+                    loose.currentTime = 0
+                    loose.play()
+                    setTimeout(function() {
+                        loose.pause()
+                    }, 4000)
                                         }, 1500)
             } 
             else {
@@ -136,6 +198,7 @@ function resultat() {
             //Annonce du résultat
             $('#resultat p').text(`Kiki gagne`)
             $('#victoireOrdi').text(`${victoireOrdi}`)
+            audio()
             }
     }   
 }
@@ -158,8 +221,10 @@ function affichageOrdi() {
 // new game
 $('#btnRetour').click(function(){
     reset()
+    ambiance.currentTime = 0
     $('#pageFin').hide()
     $('#gameArena').show()
+    $('#choixJoueur p').text(`Dépose ton choix.`)
     // reset fin de partie
     victoireJoueur = 0
     $('#victoireJoueur').text(`${victoireJoueur}`)

@@ -173,6 +173,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 /*Mise en forme textes*/
 h2{
@@ -252,7 +253,6 @@ h2{
         transform: scale(1);
         opacity: 1;
     }
-
     100% {
         opacity: 0;
         transform: scale(0);
@@ -320,35 +320,24 @@ h2{
     right: 0;
     bottom: 0;
     left: 0;
+    background-image: url(../img/background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    opacity: 0;
 }
 @keyframes fondScores {
     0% {
-        bottom: 0;
         opacity: 0;
-        background-image: url(../img/background.webp);
-        background-repeat: no-repeat;
-        background-size: cover;
     }
     10% {
-        bottom: 0;
         opacity: 1;
-        background-image: url(../img/background.webp);
-        background-repeat: no-repeat;
-        background-size: cover;
     }
     90% {
-        bottom: 0;
         opacity: 1;
-        background-image: url(../img/background.webp);
-        background-repeat: no-repeat;
-        background-size: cover;
     }
     100% {
-        bottom: 0;
         opacity: 0;
-        background-image: url(../img/background.webp);
-        background-repeat: no-repeat;
-        background-size: cover;
     }
 }
 #gameArena.score #fightAnimation {
@@ -582,6 +571,7 @@ h2{
         z-index: 2;
         background-image: url(../img/cetoineAvecAile.png);
         transform: translateY(0);
+        
     }
     30% {
         z-index: 2;
@@ -765,26 +755,24 @@ h2{
 }
 @keyframes fadePageFin {
     0% {
-        background-image: url(../img/cetoineOrdi.png)
-    }
-    40% {
-        background-image: url(../img/cetoineAvecAileOrdi.png);
-    }
-    50% {
-        transform: translate(0, 0);
-    }
-    70% {
-        background-image: url(../img/cetoineAvecAileOrdi.png);
-        transform: translate(30vh, -50vh);
+        opacity: 0;
     }
     100% {
-        background-image: url(../img/cetoineAvecAileOrdi.png);
-        transform: translate(30vh, -50vh);
+        opacity: 1;
     }
 }
 /* PAGE DE FIN */
 #pageFin {
     display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} 
+#pageFinAnimation{
     position: fixed;
     height: 100vh;
     width: 100%;
@@ -797,7 +785,7 @@ h2{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-} 
+}
 #pageFin p{
     font-family: FingerPaint-Regular;
     font-size: 4em;
@@ -818,6 +806,9 @@ h2{
 }
 /*******************************************Media Queries***********************************************/
 @media screen and (max-width: 1024px){
+    #btnBegin{
+        width: 35vw;
+    }
     #zoneChoix button {
         display: block;
     }
@@ -831,10 +822,19 @@ h2{
         display: none;
     }
     #timer p {
-        font-size: 5em;
+        font-size: 7em;
+        color :rgb(94, 155, 54);
+        text-shadow: 5px 5px 5px  rgb(43, 18, 8);
     }
     #timer.on #resultat p {
         text-align: center;
         font-size: 5em;
+    }
+    #textPres{
+        width: 75vw;
+        font-size: 1em;
+    }
+    #btnRetour{
+        font-size: 2em;
     }
 }
