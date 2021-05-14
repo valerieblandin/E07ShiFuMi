@@ -72,10 +72,10 @@ $(function() {
 //Détermination du vainqueur
 function resultat() {
     if (choixJoueur === 'rose' &&  choixOrdinateur === 'main' ||
-            choixJoueur === 'main' &&  choixOrdinateur === 'cetoine' ||
-            choixJoueur === 'cetoine' &&  choixOrdinateur === 'rose') {
-                victoireJoueur+= 1
-                $('#victoireJoueur').text(`${victoireJoueur}`)
+        choixJoueur === 'main' &&  choixOrdinateur === 'cetoine' ||
+        choixJoueur === 'cetoine' &&  choixOrdinateur === 'rose') {
+            victoireJoueur+= 1
+            $('#victoireJoueur').text(`${victoireJoueur}`)
                 if (victoireJoueur === 3) { 
                     //Ajout de classe egalité pour l'animation
                     $('#ordiAnimation').addClass(`loose ${choixOrdinateur}`)
@@ -91,7 +91,6 @@ function resultat() {
                         $('#gameAccueil').hide()
                         $('#pageFin').show()
                                             }, 1500)
-
                 } 
                 else {
                     //Ajout de classe egalité pour l'animation
@@ -115,7 +114,7 @@ function resultat() {
         victoireOrdi+=1
         $('#victoireOrdi').text(`${victoireOrdi}`)
             if (victoireOrdi === 3) {
-                            //Ajout de classe egalité pour l'animation
+                //Ajout de classe egalité pour l'animation
                 $('#ordiAnimation').addClass(`win ${choixOrdinateur}`)
                 $('#playerAnimation').addClass(`loose ${choixJoueur}`)
                 $('#gameArena').addClass(`score`)
@@ -128,7 +127,6 @@ function resultat() {
                     $('#gameAccueil').hide()
                     $('#pageFin').show() 
                                         }, 1500)
-
             } 
             else {
             //Ajout de classe egalité pour l'animation

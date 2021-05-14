@@ -760,7 +760,28 @@ h2{
 #playerAnimation.loose.main #animationContainer { 
     animation: mainLoose 2s ;
 }
-
+#pageFinAnimation{
+    animation: fadePageFin 2s ;
+}
+@keyframes fadePageFin {
+    0% {
+        background-image: url(../img/cetoineOrdi.png)
+    }
+    40% {
+        background-image: url(../img/cetoineAvecAileOrdi.png);
+    }
+    50% {
+        transform: translate(0, 0);
+    }
+    70% {
+        background-image: url(../img/cetoineAvecAileOrdi.png);
+        transform: translate(30vh, -50vh);
+    }
+    100% {
+        background-image: url(../img/cetoineAvecAileOrdi.png);
+        transform: translate(30vh, -50vh);
+    }
+}
 /* PAGE DE FIN */
 #pageFin {
     display: none;
